@@ -11,8 +11,8 @@
     background: #f4f6fa; min-height: 100vh; color: #1a2035;
     display: flex; align-items: center; justify-content: center; padding: 24px;
   }
-  .wrap { max-width: 480px; width: 100%; }
-  .header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .wrap { max-width: 560px; width: 100%; }
+  .header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .logo-badge {
     width: 44px; height: 44px; border-radius: 10px; background: #27500A;
     color: #fff; display: flex; align-items: center; justify-content: center;
@@ -20,15 +20,32 @@
   }
   .header-title { font-size: 19px; font-weight: 700; }
   .header-sub { font-size: 13px; color: #6b7280; margin-top: 1px; }
-  .card-link {
-    display: block; background: #fff; border: 1px solid #e2e5ec; border-radius: 12px;
-    padding: 20px 22px; margin-bottom: 14px; text-decoration: none; color: inherit;
+
+  /* ── Testing notice ─────────────────────────────────── */
+  .test-notice {
+    background: #fff8e6; border: 1px solid #f0d488; border-radius: 8px;
+    padding: 10px 14px; margin-bottom: 20px;
+    font-size: 12.5px; color: #6b5410; line-height: 1.5;
+  }
+
+  /* ── Tab bar ────────────────────────────────────────── */
+  .tab-bar {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin-bottom: 0;
+  }
+  .tab-link {
+    display: block; background: #fff; border: 2px solid #e2e5ec; border-radius: 12px;
+    padding: 20px 18px; text-decoration: none; color: inherit;
     transition: box-shadow .15s, border-color .15s;
   }
-  .card-link:hover { box-shadow: 0 4px 14px rgba(0,0,0,.06); border-color: #c8d0e0; }
-  .card-icon { font-size: 26px; margin-bottom: 8px; }
-  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-  .card-desc { font-size: 13.5px; color: #6b7280; line-height: 1.5; }
+  .tab-link:hover { box-shadow: 0 4px 14px rgba(0,0,0,.06); border-color: #27500A; }
+  .tab-icon { font-size: 26px; margin-bottom: 8px; }
+  .tab-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .tab-desc { font-size: 13px; color: #6b7280; line-height: 1.5; }
+
+  @media (max-width: 480px) {
+    .tab-bar { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -41,17 +58,23 @@
     </div>
   </div>
 
-  <a class="card-link" href="mortgage-calculator.html">
-    <div class="card-icon">🏠</div>
-    <div class="card-title">Mortgage Reduction Calculator</div>
-    <div class="card-desc">See how much faster you could pay off your home loan, and how much interest you could save.</div>
-  </a>
+  <div class="test-notice">
+    🔒 For testing purposes only — please don't share this link with anyone else.
+  </div>
 
-  <a class="card-link" href="credit-card-calculator.html">
-    <div class="card-icon">💳</div>
-    <div class="card-title">Credit Card Reduction Calculator</div>
-    <div class="card-desc">See what paying only the minimum is really costing you, and how much faster you could clear it.</div>
-  </a>
+  <div class="tab-bar">
+    <a class="tab-link" href="mortgage-calculator.html">
+      <div class="tab-icon">🏠</div>
+      <div class="tab-title">Mortgage Reduction Calculator</div>
+      <div class="tab-desc">See how much faster you could pay off your home loan, and how much interest you could save.</div>
+    </a>
+
+    <a class="tab-link" href="credit-card-calculator.html">
+      <div class="tab-icon">💳</div>
+      <div class="tab-title">Credit Card Reduction Calculator</div>
+      <div class="tab-desc">See what paying only the minimum is really costing you, and how much faster you could clear it.</div>
+    </a>
+  </div>
 </div>
 </body>
 </html>
